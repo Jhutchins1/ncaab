@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- the full dict for a president is sent here as pres by the route -->
+
+<!-- NOTE the pattern for pointing to a file inside the static folder -->
+
+<h1>{{ champion['Year '] }} - {{champion['College']}}</h1>
+
+<p id="college"> In <strong>{{ champion['Year '] }}, {{  champion['College'] }}</strong> won the NCAA Mens Basketball national tournament. </p>
+    
+<p><strong>{{ champion['College']}}</strong> was the <strong>{{ champion['Seed'] }}</strong> seed from the <strong>{{ champion['Conference'] }}</strong> conference, in <strong>{{ champion['Year '] }}</strong>. </p>
+    
+<p>Their record for the season was <strong>{{ champion['Record'] }}</strong> and the Most Oustanding Player of the tournament from the team was <strong>{{ champion['MOP'] }}</strong>. </p>
+
+<!-- NOTE the way to link to a route: Use the function name -->
+<p><a href="{{ url_for('index') }}">Return to the list</a> to select a different team.</p>
+
+{% endblock %}
